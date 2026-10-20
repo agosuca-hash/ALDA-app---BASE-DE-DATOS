@@ -1,0 +1,442 @@
+import '/components/option_button_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
+
+import 'necesitoayuda_model.dart';
+export 'necesitoayuda_model.dart';
+
+/// Create a complete, fully editable FlutterFlow mobile page for ALDA, named
+/// "ComoTeSentisPage".
+///
+/// This is SCREEN 2 of the ALDA app. It opens when the user taps "Necesito
+/// ayuda" on the home page.
+///
+/// IMPORTANT: Reproduce the following Figma design faithfully. Do not invent,
+/// remove, rename or summarize any elements.
+///
+/// DESIGN SYSTEM:
+/// - Full-screen purple background: #4F378B
+/// - White/cream text: #FAF7F2
+/// - Lavender buttons: #E8DDFF
+/// - Dark purple button text: #220E52
+/// - Font family: Lexend
+/// - Mobile layout width: approximately 402px
+/// - Horizontal padding: 24px
+/// - Vertical spacing: 18px
+/// - Rounded buttons: 100px radius
+/// - Rounded information card: 24px radius
+///
+/// HEADER:
+/// Create a horizontal row at the top containing:
+/// - Back arrow on the left, cream color
+/// - "ALDA" logo in cream, Lexend SemiBold, 24px
+/// - Small orange sun icon next to the logo
+/// - Hamburger menu icon on the right
+///
+/// MAIN HEADING:
+/// Centered, bold, cream-colored text, 38px:
+///
+/// "¿Cómo te sentís hoy?"
+///
+/// SUBTITLE:
+/// Centered, cream-colored text, 15px:
+///
+/// "No tenés que resolverlo todo ahora."
+///
+/// ILLUSTRATION:
+/// Below the subtitle, center a friendly, minimalist, supportive
+/// illustration, approximately 160 × 105px. Use soft lavender and cream
+/// details, consistent with ALDA's visual identity.
+///
+/// FIVE MANDATORY OPTION BUTTONS:
+/// Create five full-width buttons, vertically stacked, each 52px tall, with
+/// 8px spacing.
+///
+/// All buttons must have:
+/// - Lavender background #E8DDFF
+/// - Dark purple text #220E52
+/// - Lexend SemiBold, 15px
+/// - Fully rounded corners
+/// - Right-facing arrow icon
+///
+/// Use these EXACT labels, in this order:
+///
+/// 1. "Me angustia la comida"
+/// 2. "Tengo ansiedad"
+/// 3. "Quiero pedir ayuda"
+/// 4. "Me siento solo/a"
+/// 5. "Me peleé con mi cuerpo"
+///
+/// Do not omit any of the five buttons.
+///
+/// BOTTOM INFORMATION CARD:
+/// Below the buttons, add a cream-colored card #FAF7F2 with 24px rounded
+/// corners and 18px padding.
+///
+/// Inside the card, vertically display:
+///
+/// Small purple label:
+/// "Podés empezar por acá"
+///
+/// Bold dark purple title, 20px:
+/// "Hablemos con alguien"
+///
+/// Purple description, 15px:
+/// "Recursos y personas que te pueden acompañar."
+///
+/// LAYOUT:
+/// - Preserve the exact order of all elements.
+/// - Use a vertically scrollable layout if needed.
+/// - Keep all text in Spanish.
+/// - Do not use gradients.
+/// - Do not introduce additional sections.
+/// - Make every element an individually editable FlutterFlow widget.
+/// - Avoid horizontal overflow and overlapping elements.
+///
+/// The final screen must contain the complete header, title, subtitle,
+/// illustration, all FIVE option buttons and the bottom information card.
+class NecesitoayudaWidget extends StatefulWidget {
+  const NecesitoayudaWidget({super.key});
+
+  static String routeName = 'Necesitoayuda';
+  static String routePath = '/necesitoayuda';
+
+  @override
+  State<NecesitoayudaWidget> createState() => _NecesitoayudaWidgetState();
+}
+
+class _NecesitoayudaWidgetState extends State<NecesitoayudaWidget> {
+  late NecesitoayudaModel _model;
+
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    _model = createModel(context, () => NecesitoayudaModel());
+  }
+
+  @override
+  void dispose() {
+    _model.dispose();
+
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
+      child: Scaffold(
+        key: scaffoldKey,
+        backgroundColor: Color(0xFF4F378B),
+        body: SingleChildScrollView(
+          primary: false,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+                child: Container(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Container(
+                        height: 64,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.arrow_back_rounded,
+                              color: Color(0xFFFAF7F2),
+                              size: 24,
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'ALDA',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        font: GoogleFonts.lexend(
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .bodyMedium
+                                                  .fontStyle,
+                                        ),
+                                        color: Color(0xFFFAF7F2),
+                                        fontSize: 24,
+                                        letterSpacing: 0.0,
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .fontStyle,
+                                        lineHeight: 1.4,
+                                      ),
+                                ),
+                                Icon(
+                                  Icons.light_mode_rounded,
+                                  color: Color(0xFFFFB74D),
+                                  size: 18,
+                                ),
+                              ].divide(SizedBox(width: 4)),
+                            ),
+                            Icon(
+                              Icons.menu_rounded,
+                              color: Color(0xFFFAF7F2),
+                              size: 24,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 24,
+                      ),
+                      Text(
+                        '¿Cómo te sentís hoy?',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              font: GoogleFonts.lexend(
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                              ),
+                              color: Color(0xFFFAF7F2),
+                              fontSize: 38,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                              lineHeight: 1.4,
+                            ),
+                      ),
+                      Container(
+                        height: 8,
+                      ),
+                      Text(
+                        'No tenés que resolverlo todo ahora.',
+                        textAlign: TextAlign.center,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              font: GoogleFonts.lexend(
+                                fontWeight: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontWeight,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .fontStyle,
+                              ),
+                              color: Color(0xFFFAF7F2),
+                              fontSize: 15,
+                              letterSpacing: 0.0,
+                              fontWeight: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontWeight,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .fontStyle,
+                              lineHeight: 1.4,
+                            ),
+                      ),
+                      Container(
+                        height: 32,
+                      ),
+                      Container(
+                        alignment: AlignmentDirectional(0, 0),
+                        child: Container(
+                          width: 160,
+                          height: 105,
+                          alignment: AlignmentDirectional(0, 0),
+                          child: Lottie.network(
+                            'https://dimg.dreamflow.cloud/v1/lottie/friendly+minimalist+supportive+illustration+in+lavender+and+cream',
+                            width: 160,
+                            height: 105,
+                            fit: BoxFit.contain,
+                            animate: true,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 32,
+                      ),
+                      Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          wrapWithModel(
+                            model: _model.optionButtonModel1,
+                            updateCallback: () => safeSetState(() {}),
+                            child: OptionButtonWidget(
+                              label: 'Me angustia la comida',
+                            ),
+                          ),
+                          wrapWithModel(
+                            model: _model.optionButtonModel2,
+                            updateCallback: () => safeSetState(() {}),
+                            child: OptionButtonWidget(
+                              label: 'Tengo ansiedad',
+                            ),
+                          ),
+                          wrapWithModel(
+                            model: _model.optionButtonModel3,
+                            updateCallback: () => safeSetState(() {}),
+                            child: OptionButtonWidget(
+                              label: 'Quiero pedir ayuda',
+                            ),
+                          ),
+                          wrapWithModel(
+                            model: _model.optionButtonModel4,
+                            updateCallback: () => safeSetState(() {}),
+                            child: OptionButtonWidget(
+                              label: 'Me siento solo/a',
+                            ),
+                          ),
+                          wrapWithModel(
+                            model: _model.optionButtonModel5,
+                            updateCallback: () => safeSetState(() {}),
+                            child: OptionButtonWidget(
+                              label: 'Me peleé con mi cuerpo',
+                            ),
+                          ),
+                        ].divide(SizedBox(height: 8)),
+                      ),
+                      Container(
+                        height: 32,
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 40),
+                        child: Container(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color(0xFFFAF7F2),
+                              borderRadius: BorderRadius.circular(24),
+                              shape: BoxShape.rectangle,
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(18),
+                              child: Container(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Podés empezar por acá',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.lexend(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF4F378B),
+                                            fontSize: 13,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                            lineHeight: 1.4,
+                                          ),
+                                    ),
+                                    Text(
+                                      'Hablemos con alguien',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.lexend(
+                                              fontWeight: FontWeight.bold,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF220E52),
+                                            fontSize: 20,
+                                            letterSpacing: 0.0,
+                                            fontWeight: FontWeight.bold,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                            lineHeight: 1.4,
+                                          ),
+                                    ),
+                                    Text(
+                                      'Recursos y personas que te pueden acompañar.',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            font: GoogleFonts.lexend(
+                                              fontWeight:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontWeight,
+                                              fontStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .fontStyle,
+                                            ),
+                                            color: Color(0xFF4F378B),
+                                            fontSize: 15,
+                                            letterSpacing: 0.0,
+                                            fontWeight:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontWeight,
+                                            fontStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .fontStyle,
+                                            lineHeight: 1.4,
+                                          ),
+                                    ),
+                                  ].divide(SizedBox(height: 4)),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

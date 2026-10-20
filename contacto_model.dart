@@ -1,0 +1,35 @@
+import '/components/contact_card_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'contacto_widget.dart' show ContactoWidget;
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+class ContactoModel extends FlutterFlowModel<ContactoWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  // Model for ContactCard.
+  late ContactCardModel contactCardModel1;
+  // Model for ContactCard.
+  late ContactCardModel contactCardModel2;
+  // Model for ContactCard.
+  late ContactCardModel contactCardModel3;
+
+  @override
+  void initState(BuildContext context) {
+    contactCardModel1 = createModel(context, () => ContactCardModel());
+    contactCardModel2 = createModel(context, () => ContactCardModel());
+    contactCardModel3 = createModel(context, () => ContactCardModel());
+  }
+
+  @override
+  void dispose() {
+    contactCardModel1.dispose();
+    contactCardModel2.dispose();
+    contactCardModel3.dispose();
+  }
+}

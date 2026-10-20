@@ -1,0 +1,53 @@
+import '/components/emotion_button_widget.dart';
+import '/components/resource_item_widget.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'tengoansiedad_widget.dart' show TengoansiedadWidget;
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+class TengoansiedadModel extends FlutterFlowModel<TengoansiedadWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  // Model for EmotionButton.
+  late EmotionButtonModel emotionButtonModel1;
+  // Model for EmotionButton.
+  late EmotionButtonModel emotionButtonModel2;
+  // Model for EmotionButton.
+  late EmotionButtonModel emotionButtonModel3;
+  // Model for EmotionButton.
+  late EmotionButtonModel emotionButtonModel4;
+  // Model for EmotionButton.
+  late EmotionButtonModel emotionButtonModel5;
+  // Model for ResourceItem.
+  late ResourceItemModel resourceItemModel1;
+  // Model for ResourceItem.
+  late ResourceItemModel resourceItemModel2;
+
+  @override
+  void initState(BuildContext context) {
+    emotionButtonModel1 = createModel(context, () => EmotionButtonModel());
+    emotionButtonModel2 = createModel(context, () => EmotionButtonModel());
+    emotionButtonModel3 = createModel(context, () => EmotionButtonModel());
+    emotionButtonModel4 = createModel(context, () => EmotionButtonModel());
+    emotionButtonModel5 = createModel(context, () => EmotionButtonModel());
+    resourceItemModel1 = createModel(context, () => ResourceItemModel());
+    resourceItemModel2 = createModel(context, () => ResourceItemModel());
+  }
+
+  @override
+  void dispose() {
+    emotionButtonModel1.dispose();
+    emotionButtonModel2.dispose();
+    emotionButtonModel3.dispose();
+    emotionButtonModel4.dispose();
+    emotionButtonModel5.dispose();
+    resourceItemModel1.dispose();
+    resourceItemModel2.dispose();
+  }
+}

@@ -1,0 +1,43 @@
+import '/components/option_button_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:ui';
+import 'necesitoayuda_widget.dart' show NecesitoayudaWidget;
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
+
+class NecesitoayudaModel extends FlutterFlowModel<NecesitoayudaWidget> {
+  ///  State fields for stateful widgets in this page.
+
+  // Model for OptionButton.
+  late OptionButtonModel optionButtonModel1;
+  // Model for OptionButton.
+  late OptionButtonModel optionButtonModel2;
+  // Model for OptionButton.
+  late OptionButtonModel optionButtonModel3;
+  // Model for OptionButton.
+  late OptionButtonModel optionButtonModel4;
+  // Model for OptionButton.
+  late OptionButtonModel optionButtonModel5;
+
+  @override
+  void initState(BuildContext context) {
+    optionButtonModel1 = createModel(context, () => OptionButtonModel());
+    optionButtonModel2 = createModel(context, () => OptionButtonModel());
+    optionButtonModel3 = createModel(context, () => OptionButtonModel());
+    optionButtonModel4 = createModel(context, () => OptionButtonModel());
+    optionButtonModel5 = createModel(context, () => OptionButtonModel());
+  }
+
+  @override
+  void dispose() {
+    optionButtonModel1.dispose();
+    optionButtonModel2.dispose();
+    optionButtonModel3.dispose();
+    optionButtonModel4.dispose();
+    optionButtonModel5.dispose();
+  }
+}
